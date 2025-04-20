@@ -363,19 +363,32 @@
 //   },
 // });
 
+// ------------------------Handling User Input-------------------------x----------------------x--------------------
+
+import {useState} from 'react';
 import {StyleSheet, Text, TextInput, View, Button} from 'react-native';
 
 const App = () => {
+  const [text, setText] = useState('');
+  const [submittedText, setsubmittedText] = useState('');
+  const handleSubmit = () => {
+    setsubmittedText(text);
+    setText('');
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Hello Bhai, Welcome to application</Text>
       <TextInput
         placeholder="Enter text here....."
         style={styles.inputPlaceholder}
+        value={text}
+        onChangeText={setText}
+        keyboardType="numeric"
       />
 
-      <Button title="Submit"></Button>
-      <Text>Result: </Text>
+      <Button title="Submit" onPress={handleSubmit}></Button>
+      {submittedText ? <Text>Result: {submittedText}</Text> : null}
     </View>
   );
 };
