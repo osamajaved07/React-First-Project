@@ -89,33 +89,294 @@
 //     fontWeight: 'bold',
 //   },
 // });
-import {SafeAreaView, ScrollView, StyleSheet, Text, View} from 'react-native';
+// import {SafeAreaView, ScrollView, StyleSheet, Text, View} from 'react-native';
+
+// const App = () => {
+//   return (
+//     <ScrollView
+//       contentContainerStyle={{gap: 10}}
+//       horizontal
+//       style={styles.container}>
+//       <View style={styles.box1} />
+//       <View style={styles.box2} />
+//       <View style={styles.box3} />
+//       <View style={styles.box1} />
+//       <View style={styles.box2} />
+//       <View style={styles.box3} />
+//       <View style={styles.box1} />
+//       <View style={styles.box2} />
+//       <View style={styles.box3} />
+//       <View style={styles.box1} />
+//       <View style={styles.box2} />
+//       <View style={styles.box3} />
+//       <View style={styles.box1} />
+//       <View style={styles.box2} />
+//       <View style={styles.box3} />
+//       <View style={styles.box1} />
+//       <View style={styles.box2} />
+//       <View style={styles.box3} />
+//     </ScrollView>
+//   );
+// };
+
+// export default App;
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     // width: '100%',
+//     // height: '100%',
+//     backgroundColor: 'pink',
+//     // alignItems: 'center',
+//     // marginTop: '20',
+//     // flexDirection: 'row',
+//     // justifyContent: 'space-evenly',
+//     padding: 10,
+//     // paddingLeft: 10,
+//     paddingTop: 50,
+//   },
+//   text: {
+//     fontSize: 50,
+//     fontWeight: 'bold',
+//     color: 'black',
+//     marginTop: '50',
+//   },
+//   box1: {
+//     // flex: 2,
+//     width: 100,
+//     height: 100,
+//     backgroundColor: 'red',
+//     borderRadius: 50,
+//   },
+
+//   box2: {
+//     // flex: 1,
+//     width: 100,
+//     height: 100,
+//     backgroundColor: 'yellow',
+//     borderRadius: 50,
+//   },
+
+//   box3: {
+//     // flex: 2,
+//     width: 100,
+//     height: 100,
+//     backgroundColor: 'green',
+//     borderRadius: 50,
+//   },
+// });
+
+// ----------------Notes for FlatList---------------------------------------------------x------------x--------------------x-----------------------------------
+
+// import {Image, StyleSheet, Text, View, FlatList} from 'react-native';
+// const dummy = [
+//   {
+//     id: 1,
+//     name: 'Ali',
+//     email: 'ali12@gmail.com',
+//     image:
+//       'https://plus.unsplash.com/premium_photo-1670282393309-70fd7f8eb1ef?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+//   },
+//   {
+//     id: 2,
+//     name: 'Ali',
+//     email: 'ali12@gmail.com',
+//     image:
+//       'https://plus.unsplash.com/premium_photo-1670282393309-70fd7f8eb1ef?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+//   },
+//   {
+//     id: 3,
+//     name: 'Ali',
+//     email: 'ali12@gmail.com',
+//     image:
+//       'https://plus.unsplash.com/premium_photo-1670282393309-70fd7f8eb1ef?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+//   },
+//   {
+//     id: 4,
+//     name: 'Ali',
+//     email: 'ali12@gmail.com',
+//     image:
+//       'https://plus.unsplash.com/premium_photo-1670282393309-70fd7f8eb1ef?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+//   },
+//   {
+//     id: 5,
+//     name: 'Ali',
+//     email: 'ali12@gmail.com',
+//     image:
+//       'https://plus.unsplash.com/premium_photo-1670282393309-70fd7f8eb1ef?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+//   },
+
+//   {
+//     id: 6,
+//     name: 'Ali',
+//     email: 'ali12@gmail.com',
+//     image:
+//       'https://plus.unsplash.com/premium_photo-1670282393309-70fd7f8eb1ef?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+//   },
+//   {
+//     id: 7,
+//     name: 'Ali',
+//     email: 'ali12@gmail.com',
+//     image:
+//       'https://plus.unsplash.com/premium_photo-1670282393309-70fd7f8eb1ef?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+//   },
+//   {
+//     id: 8,
+//     name: 'Ali',
+//     email: 'ali12@gmail.com',
+//     image:
+//       'https://plus.unsplash.com/premium_photo-1670282393309-70fd7f8eb1ef?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+//   },
+//   {
+//     id: 9,
+//     name: 'Ali',
+//     email: 'ali12@gmail.com',
+//     image:
+//       'https://plus.unsplash.com/premium_photo-1670282393309-70fd7f8eb1ef?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+//   },
+
+//   {
+//     id: 10,
+//     name: 'Ali',
+//     email: 'ali12@gmail.com',
+//     image:
+//       'https://plus.unsplash.com/premium_photo-1670282393309-70fd7f8eb1ef?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+//   },
+//   {
+//     id: 11,
+//     name: 'Ali',
+//     email: 'ali12@gmail.com',
+//     image:
+//       'https://plus.unsplash.com/premium_photo-1670282393309-70fd7f8eb1ef?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+//   },
+//   {
+//     id: 12,
+//     name: 'Ali',
+//     email: 'ali12@gmail.com',
+//     image:
+//       'https://plus.unsplash.com/premium_photo-1670282393309-70fd7f8eb1ef?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+//   },
+//   {
+//     id: 13,
+//     name: 'Ali',
+//     email: 'ali12@gmail.com',
+//     image:
+//       'https://plus.unsplash.com/premium_photo-1670282393309-70fd7f8eb1ef?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+//   },
+
+//   {
+//     id: 14,
+//     name: 'Ali',
+//     email: 'ali12@gmail.com',
+//     image:
+//       'https://plus.unsplash.com/premium_photo-1670282393309-70fd7f8eb1ef?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+//   },
+//   {
+//     id: 15,
+//     name: 'Ali',
+//     email: 'ali12@gmail.com',
+//     image:
+//       'https://plus.unsplash.com/premium_photo-1670282393309-70fd7f8eb1ef?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+//   },
+//   {
+//     id: 16,
+//     name: 'Ali',
+//     email: 'ali12@gmail.com',
+//     image:
+//       'https://plus.unsplash.com/premium_photo-1670282393309-70fd7f8eb1ef?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+//   },
+//   {
+//     id: 17,
+//     name: 'Ali',
+//     email: 'ali12@gmail.com',
+//     image:
+//       'https://plus.unsplash.com/premium_photo-1670282393309-70fd7f8eb1ef?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+//   },
+
+//   {
+//     id: 18,
+//     name: 'Ali',
+//     email: 'ali12@gmail.com',
+//     image:
+//       'https://plus.unsplash.com/premium_photo-1670282393309-70fd7f8eb1ef?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+//   },
+//   {
+//     id: 19,
+//     name: 'Ali',
+//     email: 'ali12@gmail.com',
+//     image:
+//       'https://plus.unsplash.com/premium_photo-1670282393309-70fd7f8eb1ef?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+//   },
+//   {
+//     id: 20,
+//     name: 'Ali',
+//     email: 'ali12@gmail.com',
+//     image:
+//       'https://plus.unsplash.com/premium_photo-1670282393309-70fd7f8eb1ef?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+//   },
+// ];
+
+// const App = () => {
+//   return (
+//     <View style={styles.container}>
+//       <FlatList
+//         data={dummy}
+//         renderItem={({item}) => (
+//           <View style={styles.card}>
+//             <Image
+//               style={{width: 40, height: 40, borderRadius: 50}}
+//               source={{
+//                 uri: 'https://plus.unsplash.com/premium_photo-1670282393309-70fd7f8eb1ef?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+//               }}
+//             />
+//             <Text>naam</Text>
+//             <Text>email</Text>
+//           </View>
+//         )}
+//         keyExtractor={item => item.id}
+//         numColumns={2}
+//         columnWrapperStyle={{justifyContent: 'space-evenly'}}
+//         ItemSeparatorComponent={<View style={{height: 10}} />}
+//       />
+//     </View>
+//   );
+// };
+
+// export default App;
+
+// const styles = StyleSheet.create({
+//   container: {
+//     width: '100%',
+//     height: '100%',
+//     backgroundColor: '#dadada',
+//     paddingVertical: 50,
+//     paddingHorizontal: 15,
+//   },
+//   card: {
+//     width: 100,
+//     height: 100,
+//     backgroundColor: 'white',
+//     borderRadius: 10,
+//     padding: 5,
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//   },
+// });
+
+import {StyleSheet, Text, TextInput, View, Button} from 'react-native';
 
 const App = () => {
   return (
-    <ScrollView
-      contentContainerStyle={{gap: 10}}
-      horizontal
-      style={styles.container}>
-      <View style={styles.box1} />
-      <View style={styles.box2} />
-      <View style={styles.box3} />
-      <View style={styles.box1} />
-      <View style={styles.box2} />
-      <View style={styles.box3} />
-      <View style={styles.box1} />
-      <View style={styles.box2} />
-      <View style={styles.box3} />
-      <View style={styles.box1} />
-      <View style={styles.box2} />
-      <View style={styles.box3} />
-      <View style={styles.box1} />
-      <View style={styles.box2} />
-      <View style={styles.box3} />
-      <View style={styles.box1} />
-      <View style={styles.box2} />
-      <View style={styles.box3} />
-    </ScrollView>
+    <View style={styles.container}>
+      <Text style={styles.title}>Hello Bhai, Welcome to application</Text>
+      <TextInput
+        placeholder="Enter text here....."
+        style={styles.inputPlaceholder}
+      />
+
+      <Button title="Submit"></Button>
+      <Text>Result: </Text>
+    </View>
   );
 };
 
@@ -124,44 +385,21 @@ export default App;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // width: '100%',
-    // height: '100%',
-    backgroundColor: 'pink',
-    // alignItems: 'center',
-    // marginTop: '20',
-    // flexDirection: 'row',
-    // justifyContent: 'space-evenly',
-    padding: 10,
-    // paddingLeft: 10,
-    paddingTop: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+    gap: 10,
   },
-  text: {
-    fontSize: 50,
+
+  title: {
+    fontSize: 24,
     fontWeight: 'bold',
-    color: 'black',
-    marginTop: '50',
   },
-  box1: {
-    // flex: 2,
-    width: 100,
-    height: 100,
-    backgroundColor: 'red',
-    borderRadius: 50,
-  },
-
-  box2: {
-    // flex: 1,
-    width: 100,
-    height: 100,
-    backgroundColor: 'yellow',
-    borderRadius: 50,
-  },
-
-  box3: {
-    // flex: 2,
-    width: 100,
-    height: 100,
-    backgroundColor: 'green',
-    borderRadius: 50,
+  inputPlaceholder: {
+    width: '100%',
+    borderWidth: 1,
+    padding: 20,
+    paddingVertical: 20,
+    borderRadius: 10,
   },
 });
