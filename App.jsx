@@ -365,54 +365,76 @@
 
 // ------------------------Handling User Input-------------------------x----------------------x--------------------
 
-import {useState} from 'react';
-import {StyleSheet, Text, TextInput, View, Button} from 'react-native';
+// import {useState} from 'react';
+// import {StyleSheet, Text, TextInput, View, Button} from 'react-native';
+
+// const App = () => {
+//   const [text, setText] = useState('');
+//   const [submittedText, setsubmittedText] = useState('');
+//   const handleSubmit = () => {
+//     setsubmittedText(text);
+//     setText('');
+//   };
+
+//   return (
+//     <View style={styles.container}>
+//       <Text style={styles.title}>Hello Bhai, Welcome to application</Text>
+//       <TextInput
+//         placeholder="Enter text here....."
+//         style={styles.inputPlaceholder}
+//         value={text}
+//         onChangeText={setText}
+//         keyboardType="numeric"
+//       />
+
+//       <Button title="Submit" onPress={handleSubmit}></Button>
+//       {submittedText ? <Text>Result: {submittedText}</Text> : null}
+
+//       <Text numberOfLines={2}>
+//         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius dicta
+//         ratione tempore doloremque corporis perspiciatis qui soluta provident
+//         illo sapiente, itaque quibusdam quos, maxime perferendis, harum quia
+//         aliquid iusto pariatur.
+//       </Text>
+//     </View>
+//   );
+// };
+
+// export default App;
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     padding: 20,
+//     gap: 10,
+//   },
+
+//   title: {
+//     fontSize: 24,
+//     fontWeight: 'bold',
+//   },
+//   inputPlaceholder: {
+//     width: '100%',
+//     borderWidth: 1,
+//     padding: 20,
+//     paddingVertical: 20,
+//     borderRadius: 10,
+//   },
+// });
+
+import {StyleSheet, Text, View} from 'react-native';
+import React from 'react';
 
 const App = () => {
-  const [text, setText] = useState('');
-  const [submittedText, setsubmittedText] = useState('');
-  const handleSubmit = () => {
-    setsubmittedText(text);
-    setText('');
-  };
-
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Hello Bhai, Welcome to application</Text>
-      <TextInput
-        placeholder="Enter text here....."
-        style={styles.inputPlaceholder}
-        value={text}
-        onChangeText={setText}
-        keyboardType="numeric"
-      />
-
-      <Button title="Submit" onPress={handleSubmit}></Button>
-      {submittedText ? <Text>Result: {submittedText}</Text> : null}
+    <View>
+      <Text>Kyaa haal hayn bhai </Text>
     </View>
   );
 };
 
 export default App;
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 20,
-    gap: 10,
-  },
-
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-  },
-  inputPlaceholder: {
-    width: '100%',
-    borderWidth: 1,
-    padding: 20,
-    paddingVertical: 20,
-    borderRadius: 10,
-  },
-});
+const styles = StyleSheet.create({});
