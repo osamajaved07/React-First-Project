@@ -424,6 +424,8 @@
 //   },
 // });
 
+// -------------------Stack Navigation Notes------------------------x--------------------------x-------------------
+
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import Home from './src/screens/Home';
@@ -431,8 +433,11 @@ import Profile from './src/screens/Profile';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Search from './src/screens/Search';
 import {NavigationContainer} from '@react-navigation/native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import Icon from 'react-native-vector-icons/AntDesign';
 
 const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 const StackNavigator = () => {
   return (
     <Stack.Navigator
@@ -452,10 +457,58 @@ const StackNavigator = () => {
     </Stack.Navigator>
   );
 };
+
+function TabNavigator() {
+  return (
+    <Tab.Navigator
+      initialRouteName="Home"
+      screenOptions={{
+        tabBarActiveTintColor: 'orange',
+        tabBarLabelPosition: 'below-icon',
+        tabBarInactiveTintColor: 'blue',
+
+        tabBarLabelStyle: {
+          fontSize: 16,
+          fontFamily: 'Georgia',
+          fontWeight: 500,
+        },
+        tabBarStyle: {
+          height: 120,
+        },
+      }}>
+      <Tab.Screen
+        name="Home"
+        component={Home}
+        options={{
+          title: 'Home Screen',
+          tabBarIcon: () => <Icon name="home" size={30} color="black" />,
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={Profile}
+        options={{
+          title: 'Profile Page',
+          tabBarIcon: () => <Icon name="user" size={30} color="black" />,
+        }}
+      />
+      <Tab.Screen
+        name="Search"
+        component={Search}
+        options={{
+          title: 'Search',
+          tabBarIcon: () => <Icon name="search1" size={30} color="black" />,
+        }}
+      />
+    </Tab.Navigator>
+  );
+}
+
 const App = () => {
   return (
     <NavigationContainer>
-      <StackNavigator />
+      <TabNavigator />
+      {/* <StackNavigator /> */}
     </NavigationContainer>
   );
 };
