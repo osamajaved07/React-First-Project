@@ -1,10 +1,20 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {Button, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 
-const Profile = () => {
+const Profile = ({navigation}) => {
   return (
-    <View>
+    <View
+      style={{
+        width: '100%',
+        height: '100%',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}>
       <Text>Profile</Text>
+      <Button
+        title="Profile Page here"
+        onPress={() => navigation.navigate('Search')}
+      />
     </View>
   );
 };
